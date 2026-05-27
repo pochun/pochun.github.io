@@ -1,0 +1,449 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Pochun Hsu</title>
+  <meta name="description" content="Research homepage for Pochun Hsu.">
+  <style>
+    :root {
+      color-scheme: light;
+      --page: #f8fafc;
+      --surface: #ffffff;
+      --ink: #1f2937;
+      --muted: #64748b;
+      --line: #dbe3ea;
+      --accent: #1a73e8;
+      --accent-soft: #e8f0fe;
+      --chip: #eef2f6;
+      --shadow: 0 14px 30px rgba(15, 23, 42, 0.08);
+    }
+
+    * {
+      box-sizing: border-box;
+    }
+
+    body {
+      margin: 0;
+      font-family: Arial, Helvetica, sans-serif;
+      color: var(--ink);
+      background: var(--page);
+      line-height: 1.55;
+    }
+
+    a {
+      color: var(--accent);
+      text-decoration: none;
+    }
+
+    a:hover {
+      text-decoration: underline;
+    }
+
+    .topbar {
+      position: sticky;
+      top: 0;
+      z-index: 10;
+      border-bottom: 1px solid var(--line);
+      background: rgba(255, 255, 255, 0.94);
+      backdrop-filter: blur(10px);
+    }
+
+    .topbar-inner {
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      gap: 18px;
+      max-width: 1120px;
+      margin: 0 auto;
+      padding: 12px 22px;
+    }
+
+    .brand {
+      display: flex;
+      align-items: center;
+      gap: 10px;
+      min-width: 0;
+      font-size: 18px;
+      font-weight: 700;
+      white-space: nowrap;
+    }
+
+    .mark {
+      display: grid;
+      width: 32px;
+      height: 32px;
+      place-items: center;
+      border-radius: 6px;
+      color: #ffffff;
+      background: var(--accent);
+      font-size: 14px;
+      letter-spacing: 0;
+    }
+
+    nav {
+      display: flex;
+      flex-wrap: wrap;
+      justify-content: flex-end;
+      gap: 10px 18px;
+      font-size: 14px;
+    }
+
+    nav a {
+      color: #334155;
+    }
+
+    main {
+      max-width: 1120px;
+      margin: 0 auto;
+      padding: 32px 22px 56px;
+    }
+
+    .layout {
+      display: grid;
+      grid-template-columns: 280px minmax(0, 1fr);
+      gap: 28px;
+      align-items: start;
+    }
+
+    .profile {
+      position: sticky;
+      top: 78px;
+      padding: 24px;
+      border: 1px solid var(--line);
+      border-radius: 8px;
+      background: var(--surface);
+      box-shadow: var(--shadow);
+    }
+
+    .avatar {
+      display: grid;
+      width: 132px;
+      height: 132px;
+      margin-bottom: 18px;
+      place-items: center;
+      border-radius: 50%;
+      color: #ffffff;
+      background: linear-gradient(135deg, #1a73e8, #0f766e);
+      font-size: 42px;
+      font-weight: 700;
+      letter-spacing: 0;
+    }
+
+    h1,
+    h2,
+    h3,
+    p {
+      margin-top: 0;
+    }
+
+    h1 {
+      margin-bottom: 4px;
+      font-size: 28px;
+      line-height: 1.18;
+      letter-spacing: 0;
+    }
+
+    .role {
+      margin-bottom: 14px;
+      color: var(--muted);
+      font-size: 15px;
+    }
+
+    .links {
+      display: grid;
+      gap: 8px;
+      margin: 18px 0 0;
+      padding: 0;
+      list-style: none;
+      font-size: 14px;
+    }
+
+    .section {
+      margin-bottom: 28px;
+      padding: 24px;
+      border: 1px solid var(--line);
+      border-radius: 8px;
+      background: var(--surface);
+    }
+
+    .section h2 {
+      margin-bottom: 14px;
+      padding-bottom: 10px;
+      border-bottom: 1px solid var(--line);
+      font-size: 20px;
+      line-height: 1.25;
+      letter-spacing: 0;
+    }
+
+    .intro {
+      margin-bottom: 0;
+      color: #334155;
+      font-size: 16px;
+    }
+
+    .metrics {
+      display: grid;
+      grid-template-columns: repeat(3, minmax(0, 1fr));
+      gap: 12px;
+    }
+
+    .metric {
+      min-height: 96px;
+      padding: 16px;
+      border: 1px solid var(--line);
+      border-radius: 8px;
+      background: #fbfdff;
+    }
+
+    .metric .value {
+      display: block;
+      margin-bottom: 4px;
+      color: #0f172a;
+      font-size: 28px;
+      font-weight: 700;
+      line-height: 1;
+    }
+
+    .metric .label {
+      color: var(--muted);
+      font-size: 13px;
+    }
+
+    .interests {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 8px;
+      padding: 0;
+      margin: 0;
+      list-style: none;
+    }
+
+    .interests li {
+      padding: 6px 10px;
+      border-radius: 999px;
+      background: var(--chip);
+      color: #334155;
+      font-size: 13px;
+    }
+
+    .paper-list {
+      display: grid;
+      gap: 18px;
+      margin: 0;
+      padding: 0;
+      list-style: none;
+    }
+
+    .paper {
+      padding-bottom: 18px;
+      border-bottom: 1px solid var(--line);
+    }
+
+    .paper:last-child {
+      padding-bottom: 0;
+      border-bottom: 0;
+    }
+
+    .paper-title {
+      margin: 0 0 4px;
+      font-size: 17px;
+      line-height: 1.35;
+    }
+
+    .authors,
+    .venue {
+      margin: 0;
+      color: var(--muted);
+      font-size: 14px;
+    }
+
+    .paper-actions {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 10px;
+      margin-top: 8px;
+      font-size: 13px;
+    }
+
+    .year {
+      display: inline-flex;
+      align-items: center;
+      min-width: 48px;
+      justify-content: center;
+      padding: 2px 8px;
+      border-radius: 999px;
+      color: #475569;
+      background: var(--accent-soft);
+      font-size: 12px;
+      font-weight: 700;
+    }
+
+    .timeline {
+      display: grid;
+      gap: 14px;
+      margin: 0;
+      padding: 0;
+      list-style: none;
+    }
+
+    .timeline li {
+      display: grid;
+      grid-template-columns: 88px minmax(0, 1fr);
+      gap: 14px;
+      padding-bottom: 14px;
+      border-bottom: 1px solid var(--line);
+    }
+
+    .timeline li:last-child {
+      padding-bottom: 0;
+      border-bottom: 0;
+    }
+
+    .timeline time {
+      color: var(--muted);
+      font-size: 13px;
+      font-weight: 700;
+    }
+
+    footer {
+      max-width: 1120px;
+      margin: 0 auto;
+      padding: 0 22px 34px;
+      color: var(--muted);
+      font-size: 13px;
+    }
+
+    @media (max-width: 780px) {
+      .topbar-inner {
+        align-items: flex-start;
+        flex-direction: column;
+      }
+
+      nav {
+        justify-content: flex-start;
+      }
+
+      .layout {
+        grid-template-columns: 1fr;
+      }
+
+      .profile {
+        position: static;
+      }
+
+      .avatar {
+        width: 104px;
+        height: 104px;
+        font-size: 34px;
+      }
+
+      .metrics {
+        grid-template-columns: 1fr;
+      }
+
+      .timeline li {
+        grid-template-columns: 1fr;
+        gap: 4px;
+      }
+    }
+  </style>
+</head>
+<body>
+  <header class="topbar">
+    <div class="topbar-inner">
+      <div class="brand"><span class="mark">PH</span><span>Pochun Hsu</span></div>
+      <nav aria-label="Primary navigation">
+        <a href="#about">About</a>
+        <a href="#publications">Publications</a>
+        <a href="#teaching">Teaching</a>
+        <a href="#contact">Contact</a>
+      </nav>
+    </div>
+  </header>
+
+  <main>
+    <div class="layout">
+      <aside class="profile" aria-label="Researcher profile">
+        <div class="avatar" aria-hidden="true">PH</div>
+        <h1>Pochun Hsu</h1>
+        <p class="role">Researcher</p>
+        <p>Research interests, publications, teaching, and contact information.</p>
+        <ul class="links">
+          <li><a href="https://scholar.google.com/" rel="me">Google Scholar</a></li>
+          <li><a href="https://github.com/pochun" rel="me">GitHub</a></li>
+          <li><a href="mailto:pochun.xu@gmail.com">pochun.xu@gmail.com</a></li>
+        </ul>
+      </aside>
+
+      <div>
+        <section class="section" id="about">
+          <h2>About</h2>
+          <p class="intro">I am a researcher working on data-driven systems, human-centered computing, and applied machine learning. This page collects selected publications, current research themes, and academic activities in a compact format inspired by researcher profiles such as Google Scholar.</p>
+        </section>
+
+        <section class="section" aria-label="Citation metrics">
+          <h2>Research Metrics</h2>
+          <div class="metrics">
+            <div class="metric"><span class="value">--</span><span class="label">Citations</span></div>
+            <div class="metric"><span class="value">--</span><span class="label">h-index</span></div>
+            <div class="metric"><span class="value">--</span><span class="label">i10-index</span></div>
+          </div>
+        </section>
+
+        <section class="section">
+          <h2>Research Interests</h2>
+          <ul class="interests">
+            <li>Machine Learning</li>
+            <li>Data Systems</li>
+            <li>Human-Computer Interaction</li>
+            <li>AI Applications</li>
+            <li>Computational Research</li>
+          </ul>
+        </section>
+
+        <section class="section" id="publications">
+          <h2>Selected Publications</h2>
+          <ol class="paper-list">
+            <li class="paper">
+              <h3 class="paper-title"><a href="#">Add your most representative paper title here</a> <span class="year">2026</span></h3>
+              <p class="authors">Pochun Hsu, Coauthor Name, Coauthor Name</p>
+              <p class="venue">Conference or Journal Name</p>
+              <div class="paper-actions"><a href="#">PDF</a><a href="#">Code</a><a href="#">BibTeX</a></div>
+            </li>
+            <li class="paper">
+              <h3 class="paper-title"><a href="#">A concise title for another research contribution</a> <span class="year">2025</span></h3>
+              <p class="authors">Pochun Hsu, Collaborator Name</p>
+              <p class="venue">Workshop, Symposium, or Preprint</p>
+              <div class="paper-actions"><a href="#">PDF</a><a href="#">Project</a><a href="#">BibTeX</a></div>
+            </li>
+            <li class="paper">
+              <h3 class="paper-title"><a href="#">Earlier work or ongoing project with a readable title</a> <span class="year">2024</span></h3>
+              <p class="authors">Pochun Hsu</p>
+              <p class="venue">Technical Report</p>
+              <div class="paper-actions"><a href="#">PDF</a><a href="#">Slides</a></div>
+            </li>
+          </ol>
+        </section>
+
+        <section class="section" id="teaching">
+          <h2>Teaching And Service</h2>
+          <ul class="timeline">
+            <li><time>2026</time><span>Course, seminar, reviewing, mentoring, or lab activity.</span></li>
+            <li><time>2025</time><span>Academic service, invited talk, workshop organization, or teaching activity.</span></li>
+          </ul>
+        </section>
+
+        <section class="section" id="contact">
+          <h2>Contact</h2>
+          <p class="intro">For research conversations, collaboration, or speaking invitations, please reach out by email or through GitHub.</p>
+        </section>
+      </div>
+    </div>
+  </main>
+
+  <footer>
+    Last updated 2026. Replace placeholder publication details with your current research record.
+  </footer>
+</body>
+</html>
