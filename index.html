@@ -16,7 +16,6 @@
       --accent: #1a73e8;
       --accent-soft: #e8f0fe;
       --chip: #eef2f6;
-      --runner: #0f766e;
       --shadow: 0 14px 30px rgba(15, 23, 42, 0.08);
     }
 
@@ -105,27 +104,13 @@
       place-items: center;
       border: 1px solid #cde3dd;
       border-radius: 50%;
-      background: radial-gradient(circle at 35% 28%, #ffffff 0 18%, #e8f7f3 19% 58%, #dbeafe 59% 100%);
+      background: #f8fafc;
       overflow: hidden;
     }
-    .avatar svg {
-      width: 118px;
-      height: 118px;
-    }
-    .avatar .runner-line {
-      fill: none;
-      stroke: var(--runner);
-      stroke-width: 4.5;
-      stroke-linecap: round;
-      stroke-linejoin: round;
-    }
-    .avatar .runner-fill { fill: var(--runner); }
-    .avatar .trail-line {
-      fill: none;
-      stroke: #94a3b8;
-      stroke-width: 3;
-      stroke-linecap: round;
-      stroke-linejoin: round;
+    .avatar img {
+      width: 132px;
+      height: 132px;
+      display: block;
     }
 
     h1, h2, h3, p { margin-top: 0; }
@@ -309,13 +294,10 @@
       nav { justify-content: flex-start; }
       .layout { grid-template-columns: 1fr; }
       .profile { position: static; }
-      .avatar {
+      .avatar,
+      .avatar img {
         width: 104px;
         height: 104px;
-      }
-      .avatar svg {
-        width: 94px;
-        height: 94px;
       }
       .metrics, .coauthors { grid-template-columns: 1fr; }
     }
@@ -338,19 +320,7 @@
     <div class="layout">
       <aside class="profile" aria-label="Researcher profile">
         <div class="avatar" aria-hidden="true">
-          <svg viewBox="0 0 120 120" role="img" aria-label="Cartoon trail runner illustration">
-            <path class="trail-line" d="M16 93c16-6 25-6 40 0s28 6 48-3" />
-            <path class="trail-line" d="M20 103h62" />
-            <path class="runner-line" d="M56 41l15 12 14-5" />
-            <path class="runner-line" d="M55 43l-12 20 22 5" />
-            <path class="runner-line" d="M63 68l18 18" />
-            <path class="runner-line" d="M47 64l-14 22" />
-            <path class="runner-line" d="M48 55l-20 1" />
-            <path class="runner-line" d="M50 56l-8-12" />
-            <circle class="runner-fill" cx="63" cy="27" r="8" />
-            <path class="runner-line" d="M18 78l14-11 13 5 15-11" />
-            <path class="runner-line" d="M80 79l9 10 15-2" />
-          </svg>
+          <img src="assets/trail-runner.svg" alt="">
         </div>
         <h1>Po-Chun Hsu</h1>
         <p class="role">MediaTek Research</p>
