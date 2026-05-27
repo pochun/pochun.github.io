@@ -3,8 +3,8 @@
 <head>
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1">
-  <title>Pochun Hsu</title>
-  <meta name="description" content="Research homepage for Pochun Hsu.">
+  <title>Po-Chun Hsu</title>
+  <meta name="description" content="Research homepage for Po-Chun Hsu, MediaTek Research.">
   <style>
     :root {
       color-scheme: light;
@@ -150,6 +150,12 @@
       font-size: 15px;
     }
 
+    .profile-note {
+      margin-bottom: 0;
+      color: #334155;
+      font-size: 14px;
+    }
+
     .links {
       display: grid;
       gap: 8px;
@@ -206,6 +212,20 @@
     }
 
     .metric .label {
+      display: block;
+      color: var(--muted);
+      font-size: 13px;
+    }
+
+    .metric .period {
+      display: block;
+      margin-top: 2px;
+      color: #94a3b8;
+      font-size: 12px;
+    }
+
+    .source-note {
+      margin: 12px 0 0;
       color: var(--muted);
       font-size: 13px;
     }
@@ -251,6 +271,10 @@
       line-height: 1.35;
     }
 
+    .paper-title a {
+      color: #0f172a;
+    }
+
     .authors,
     .venue {
       margin: 0;
@@ -258,15 +282,17 @@
       font-size: 14px;
     }
 
-    .paper-actions {
+    .paper-meta {
       display: flex;
       flex-wrap: wrap;
-      gap: 10px;
+      gap: 8px;
       margin-top: 8px;
-      font-size: 13px;
+      font-size: 12px;
+      font-weight: 700;
     }
 
-    .year {
+    .year,
+    .cites {
       display: inline-flex;
       align-items: center;
       min-width: 48px;
@@ -275,35 +301,35 @@
       border-radius: 999px;
       color: #475569;
       background: var(--accent-soft);
-      font-size: 12px;
-      font-weight: 700;
     }
 
-    .timeline {
+    .cites {
+      background: #ecfdf5;
+      color: #166534;
+    }
+
+    .coauthors {
       display: grid;
-      gap: 14px;
+      grid-template-columns: repeat(2, minmax(0, 1fr));
+      gap: 12px;
       margin: 0;
       padding: 0;
       list-style: none;
     }
 
-    .timeline li {
-      display: grid;
-      grid-template-columns: 88px minmax(0, 1fr);
-      gap: 14px;
-      padding-bottom: 14px;
-      border-bottom: 1px solid var(--line);
+    .coauthors li {
+      padding: 12px;
+      border: 1px solid var(--line);
+      border-radius: 8px;
+      background: #fbfdff;
+      color: #334155;
+      font-size: 14px;
     }
 
-    .timeline li:last-child {
-      padding-bottom: 0;
-      border-bottom: 0;
-    }
-
-    .timeline time {
-      color: var(--muted);
-      font-size: 13px;
-      font-weight: 700;
+    .coauthors strong {
+      display: block;
+      color: #0f172a;
+      font-size: 14px;
     }
 
     footer {
@@ -338,13 +364,9 @@
         font-size: 34px;
       }
 
-      .metrics {
+      .metrics,
+      .coauthors {
         grid-template-columns: 1fr;
-      }
-
-      .timeline li {
-        grid-template-columns: 1fr;
-        gap: 4px;
       }
     }
   </style>
@@ -352,11 +374,11 @@
 <body>
   <header class="topbar">
     <div class="topbar-inner">
-      <div class="brand"><span class="mark">PH</span><span>Pochun Hsu</span></div>
+      <div class="brand"><span class="mark">PH</span><span>Po-Chun Hsu</span></div>
       <nav aria-label="Primary navigation">
         <a href="#about">About</a>
         <a href="#publications">Publications</a>
-        <a href="#teaching">Teaching</a>
+        <a href="#coauthors">Coauthors</a>
         <a href="#contact">Contact</a>
       </nav>
     </div>
@@ -366,11 +388,11 @@
     <div class="layout">
       <aside class="profile" aria-label="Researcher profile">
         <div class="avatar" aria-hidden="true">PH</div>
-        <h1>Pochun Hsu</h1>
-        <p class="role">Researcher</p>
-        <p>Research interests, publications, teaching, and contact information.</p>
+        <h1>Po-Chun Hsu</h1>
+        <p class="role">MediaTek Research</p>
+        <p class="profile-note">Verified email at ntu.edu.tw. Research interests include machine learning and language models.</p>
         <ul class="links">
-          <li><a href="https://scholar.google.com/" rel="me">Google Scholar</a></li>
+          <li><a href="https://scholar.google.com/citations?user=Pi2b-gwAAAAJ&amp;hl=zh-TW" rel="me">Google Scholar</a></li>
           <li><a href="https://github.com/pochun" rel="me">GitHub</a></li>
           <li><a href="mailto:pochun.xu@gmail.com">pochun.xu@gmail.com</a></li>
         </ul>
@@ -379,26 +401,29 @@
       <div>
         <section class="section" id="about">
           <h2>About</h2>
-          <p class="intro">I am a researcher working on data-driven systems, human-centered computing, and applied machine learning. This page collects selected publications, current research themes, and academic activities in a compact format inspired by researcher profiles such as Google Scholar.</p>
+          <p class="intro">I am a researcher at MediaTek Research working on machine learning and language models, with recent publications on function calling, retrieval augmented dialogues, Traditional Chinese language models, multimodal recognition, and trustworthy AI for Taiwanese Mandarin.</p>
         </section>
 
         <section class="section" aria-label="Citation metrics">
           <h2>Research Metrics</h2>
           <div class="metrics">
-            <div class="metric"><span class="value">--</span><span class="label">Citations</span></div>
-            <div class="metric"><span class="value">--</span><span class="label">h-index</span></div>
-            <div class="metric"><span class="value">--</span><span class="label">i10-index</span></div>
+            <div class="metric"><span class="value">102</span><span class="label">Citations</span><span class="period">101 since 2021</span></div>
+            <div class="metric"><span class="value">6</span><span class="label">h-index</span><span class="period">6 since 2021</span></div>
+            <div class="metric"><span class="value">5</span><span class="label">i10-index</span><span class="period">5 since 2021</span></div>
           </div>
+          <p class="source-note">Metrics are from Google Scholar, viewed on May 27, 2026.</p>
         </section>
 
         <section class="section">
           <h2>Research Interests</h2>
           <ul class="interests">
             <li>Machine Learning</li>
-            <li>Data Systems</li>
-            <li>Human-Computer Interaction</li>
-            <li>AI Applications</li>
-            <li>Computational Research</li>
+            <li>Language Models</li>
+            <li>Function Calling</li>
+            <li>Retrieval Augmented Dialogue</li>
+            <li>Traditional Chinese LLMs</li>
+            <li>Trustworthy AI</li>
+            <li>ASR and OCR</li>
           </ul>
         </section>
 
@@ -406,44 +431,102 @@
           <h2>Selected Publications</h2>
           <ol class="paper-list">
             <li class="paper">
-              <h3 class="paper-title"><a href="#">Add your most representative paper title here</a> <span class="year">2026</span></h3>
-              <p class="authors">Pochun Hsu, Coauthor Name, Coauthor Name</p>
-              <p class="venue">Conference or Journal Name</p>
-              <div class="paper-actions"><a href="#">PDF</a><a href="#">Code</a><a href="#">BibTeX</a></div>
+              <h3 class="paper-title"><a href="https://scholar.google.com/citations?user=Pi2b-gwAAAAJ&amp;hl=zh-TW">Enhancing function-calling capabilities in LLMs: Strategies for prompt formats, data integration, and multilingual translation</a></h3>
+              <p class="authors">YC Chen, PC Hsu, CJ Hsu, D Shiu</p>
+              <p class="venue">Proceedings of the 2025 Conference of the Nations of the Americas Chapter of the Association for Computational Linguistics</p>
+              <div class="paper-meta"><span class="year">2025</span><span class="cites">28 citations</span></div>
             </li>
             <li class="paper">
-              <h3 class="paper-title"><a href="#">A concise title for another research contribution</a> <span class="year">2025</span></h3>
-              <p class="authors">Pochun Hsu, Collaborator Name</p>
-              <p class="venue">Workshop, Symposium, or Preprint</p>
-              <div class="paper-actions"><a href="#">PDF</a><a href="#">Project</a><a href="#">BibTeX</a></div>
+              <h3 class="paper-title"><a href="https://scholar.google.com/citations?user=Pi2b-gwAAAAJ&amp;hl=zh-TW">RAD-Bench: Evaluating large language models' capabilities in retrieval augmented dialogues</a></h3>
+              <p class="authors">TL Kuo, FT Liao, MW Hsieh, FC Chang, PC Hsu, DS Shiu</p>
+              <p class="venue">Proceedings of the 2025 Conference of the Nations of the Americas Chapter of the Association for Computational Linguistics</p>
+              <div class="paper-meta"><span class="year">2025</span><span class="cites">17 citations</span></div>
             </li>
             <li class="paper">
-              <h3 class="paper-title"><a href="#">Earlier work or ongoing project with a readable title</a> <span class="year">2024</span></h3>
-              <p class="authors">Pochun Hsu</p>
-              <p class="venue">Technical Report</p>
-              <div class="paper-actions"><a href="#">PDF</a><a href="#">Slides</a></div>
+              <h3 class="paper-title"><a href="https://scholar.google.com/citations?user=Pi2b-gwAAAAJ&amp;hl=zh-TW">Extending the pre-training of BLOOM for improved support of Traditional Chinese: Models, methods and results</a></h3>
+              <p class="authors">P Ennen, PC Hsu, CJ Hsu, CL Liu, YC Wu, YH Liao, CT Lin, DS Shiu, et al.</p>
+              <p class="venue">arXiv preprint arXiv:2303.04715</p>
+              <div class="paper-meta"><span class="year">2023</span><span class="cites">15 citations</span></div>
+            </li>
+            <li class="paper">
+              <h3 class="paper-title"><a href="https://scholar.google.com/citations?user=Pi2b-gwAAAAJ&amp;hl=zh-TW">Breeze-7B Technical Report</a></h3>
+              <p class="authors">CJ Hsu, CL Liu, FT Liao, PC Hsu, YC Chen, DS Shiu</p>
+              <p class="venue">arXiv preprint arXiv:2403.02712</p>
+              <div class="paper-meta"><span class="year">2024</span><span class="cites">14 citations</span></div>
+            </li>
+            <li class="paper">
+              <h3 class="paper-title"><a href="https://scholar.google.com/citations?user=Pi2b-gwAAAAJ&amp;hl=zh-TW">Advancing the evaluation of Traditional Chinese language models: Towards a comprehensive benchmark suite</a></h3>
+              <p class="authors">CJ Hsu, CL Liu, FT Liao, PC Hsu, YC Chen, D Shiu</p>
+              <p class="venue">arXiv preprint arXiv:2309.08448</p>
+              <div class="paper-meta"><span class="year">2023</span><span class="cites">10 citations</span></div>
+            </li>
+            <li class="paper">
+              <h3 class="paper-title"><a href="https://scholar.google.com/citations?user=Pi2b-gwAAAAJ&amp;hl=zh-TW">Let's fuse step by step: A generative fusion decoding algorithm with LLMs for multi-modal text recognition</a></h3>
+              <p class="authors">CJ Hsu, YC Chen, FT Liao, PC Ho, YH Wang, PC Hsu, D Shiu</p>
+              <p class="venue">arXiv preprint arXiv:2405.14259</p>
+              <div class="paper-meta"><span class="year">2024</span><span class="cites">6 citations</span></div>
+            </li>
+            <li class="paper">
+              <h3 class="paper-title"><a href="https://scholar.google.com/citations?user=Pi2b-gwAAAAJ&amp;hl=zh-TW">Let's fuse step by step: A generative fusion decoding algorithm with LLMs for robust and instruction-aware ASR and OCR</a></h3>
+              <p class="authors">CJ Hsu, YC Chen, FT Liao, PC Ho, YH Wang, PC Hsu, D Shiu</p>
+              <p class="venue">Findings of the Association for Computational Linguistics: ACL 2025, 24959-24973</p>
+              <div class="paper-meta"><span class="year">2025</span><span class="cites">4 citations</span></div>
+            </li>
+            <li class="paper">
+              <h3 class="paper-title"><a href="https://scholar.google.com/citations?user=Pi2b-gwAAAAJ&amp;hl=zh-TW">A test problem with adjustable degrees of overlap and conflict among subproblems</a></h3>
+              <p class="authors">WM Chen, CY Shao, PC Hsu, TL Yu</p>
+              <p class="venue">Proceedings of the 14th annual conference on Genetic and evolutionary computation</p>
+              <div class="paper-meta"><span class="year">2012</span><span class="cites">4 citations</span></div>
+            </li>
+            <li class="paper">
+              <h3 class="paper-title"><a href="https://scholar.google.com/citations?user=Pi2b-gwAAAAJ&amp;hl=zh-TW">The Breeze 2 herd of models: Traditional Chinese LLMs based on Llama with vision-aware and function-calling capabilities</a></h3>
+              <p class="authors">CJ Hsu, CS Liu, MH Chen, M Chen, PC Hsu, YC Chen, DS Shiu</p>
+              <p class="venue">arXiv e-prints, arXiv:2501.13921</p>
+              <div class="paper-meta"><span class="year">2025</span><span class="cites">3 citations</span></div>
+            </li>
+            <li class="paper">
+              <h3 class="paper-title"><a href="https://scholar.google.com/citations?user=Pi2b-gwAAAAJ&amp;hl=zh-TW">A niching scheme for EDAs to reduce spurious dependencies</a></h3>
+              <p class="authors">PC Hsu, TL Yu</p>
+              <p class="venue">Proceedings of the 15th annual conference on Genetic and evolutionary computation</p>
+              <div class="paper-meta"><span class="year">2013</span><span class="cites">1 citation</span></div>
+            </li>
+            <li class="paper">
+              <h3 class="paper-title"><a href="https://scholar.google.com/citations?user=Pi2b-gwAAAAJ&amp;hl=zh-TW">Taiwan Safety Benchmark and Breeze Guard: Toward Trustworthy AI for Taiwanese Mandarin</a></h3>
+              <p class="authors">PC Hsu, MH Chen, TL Chao, CT Han, D Shiu</p>
+              <p class="venue">arXiv preprint arXiv:2603.07286</p>
+              <div class="paper-meta"><span class="year">2026</span></div>
+            </li>
+            <li class="paper">
+              <h3 class="paper-title"><a href="https://scholar.google.com/citations?user=Pi2b-gwAAAAJ&amp;hl=zh-TW">Breeze Taigi: Benchmarks and Models for Taiwanese Hokkien Speech Recognition and Synthesis</a></h3>
+              <p class="authors">YS Lan, CS Liu, YC Chen, PC Hsu, A Chiu, SW Lin, D Shiu, YF Liao</p>
+              <p class="venue">arXiv preprint arXiv:2603.19259</p>
+              <div class="paper-meta"><span class="year">2026</span></div>
             </li>
           </ol>
         </section>
 
-        <section class="section" id="teaching">
-          <h2>Teaching And Service</h2>
-          <ul class="timeline">
-            <li><time>2026</time><span>Course, seminar, reviewing, mentoring, or lab activity.</span></li>
-            <li><time>2025</time><span>Academic service, invited talk, workshop organization, or teaching activity.</span></li>
+        <section class="section" id="coauthors">
+          <h2>Frequent Coauthors</h2>
+          <ul class="coauthors">
+            <li><strong>Feng-Ting Liao</strong>MediaTek Research</li>
+            <li><strong>Chang-Le Liu</strong>National Taiwan University</li>
+            <li><strong>Philipp Ennen</strong>MediaTek Research</li>
+            <li><strong>Wei-Yun Ma</strong>Institute of Information Science, Academia Sinica</li>
+            <li><strong>Yin-Hsiang Liao</strong>National Taiwan University</li>
+            <li><strong>Tian-Li Yu</strong>National Taiwan University</li>
           </ul>
         </section>
 
         <section class="section" id="contact">
           <h2>Contact</h2>
-          <p class="intro">For research conversations, collaboration, or speaking invitations, please reach out by email or through GitHub.</p>
+          <p class="intro">For research conversations or collaboration, please reach out by email, GitHub, or Google Scholar.</p>
         </section>
       </div>
     </div>
   </main>
 
   <footer>
-    Last updated 2026. Replace placeholder publication details with your current research record.
+    Last updated May 2026. Publication and citation information is based on Po-Chun Hsu's Google Scholar profile.
   </footer>
 </body>
 </html>
