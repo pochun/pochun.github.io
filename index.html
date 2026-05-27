@@ -16,13 +16,11 @@
       --accent: #1a73e8;
       --accent-soft: #e8f0fe;
       --chip: #eef2f6;
+      --runner: #0f766e;
       --shadow: 0 14px 30px rgba(15, 23, 42, 0.08);
     }
 
-    * {
-      box-sizing: border-box;
-    }
-
+    * { box-sizing: border-box; }
     body {
       margin: 0;
       font-family: Arial, Helvetica, sans-serif;
@@ -30,15 +28,8 @@
       background: var(--page);
       line-height: 1.55;
     }
-
-    a {
-      color: var(--accent);
-      text-decoration: none;
-    }
-
-    a:hover {
-      text-decoration: underline;
-    }
+    a { color: var(--accent); text-decoration: none; }
+    a:hover { text-decoration: underline; }
 
     .topbar {
       position: sticky;
@@ -48,7 +39,6 @@
       background: rgba(255, 255, 255, 0.94);
       backdrop-filter: blur(10px);
     }
-
     .topbar-inner {
       display: flex;
       align-items: center;
@@ -58,7 +48,6 @@
       margin: 0 auto;
       padding: 12px 22px;
     }
-
     .brand {
       display: flex;
       align-items: center;
@@ -68,7 +57,6 @@
       font-weight: 700;
       white-space: nowrap;
     }
-
     .mark {
       display: grid;
       width: 32px;
@@ -80,7 +68,6 @@
       font-size: 14px;
       letter-spacing: 0;
     }
-
     nav {
       display: flex;
       flex-wrap: wrap;
@@ -88,24 +75,19 @@
       gap: 10px 18px;
       font-size: 14px;
     }
-
-    nav a {
-      color: #334155;
-    }
+    nav a { color: #334155; }
 
     main {
       max-width: 1120px;
       margin: 0 auto;
       padding: 32px 22px 56px;
     }
-
     .layout {
       display: grid;
       grid-template-columns: 280px minmax(0, 1fr);
       gap: 28px;
       align-items: start;
     }
-
     .profile {
       position: sticky;
       top: 78px;
@@ -115,47 +97,54 @@
       background: var(--surface);
       box-shadow: var(--shadow);
     }
-
     .avatar {
       display: grid;
       width: 132px;
       height: 132px;
       margin-bottom: 18px;
       place-items: center;
+      border: 1px solid #cde3dd;
       border-radius: 50%;
-      color: #ffffff;
-      background: linear-gradient(135deg, #1a73e8, #0f766e);
-      font-size: 42px;
-      font-weight: 700;
-      letter-spacing: 0;
+      background: radial-gradient(circle at 35% 28%, #ffffff 0 18%, #e8f7f3 19% 58%, #dbeafe 59% 100%);
+      overflow: hidden;
+    }
+    .avatar svg {
+      width: 118px;
+      height: 118px;
+    }
+    .avatar .runner-line {
+      fill: none;
+      stroke: var(--runner);
+      stroke-width: 4.5;
+      stroke-linecap: round;
+      stroke-linejoin: round;
+    }
+    .avatar .runner-fill { fill: var(--runner); }
+    .avatar .trail-line {
+      fill: none;
+      stroke: #94a3b8;
+      stroke-width: 3;
+      stroke-linecap: round;
+      stroke-linejoin: round;
     }
 
-    h1,
-    h2,
-    h3,
-    p {
-      margin-top: 0;
-    }
-
+    h1, h2, h3, p { margin-top: 0; }
     h1 {
       margin-bottom: 4px;
       font-size: 28px;
       line-height: 1.18;
       letter-spacing: 0;
     }
-
     .role {
       margin-bottom: 14px;
       color: var(--muted);
       font-size: 15px;
     }
-
     .profile-note {
       margin-bottom: 0;
       color: #334155;
       font-size: 14px;
     }
-
     .links {
       display: grid;
       gap: 8px;
@@ -164,7 +153,6 @@
       list-style: none;
       font-size: 14px;
     }
-
     .section {
       margin-bottom: 28px;
       padding: 24px;
@@ -172,7 +160,6 @@
       border-radius: 8px;
       background: var(--surface);
     }
-
     .section h2 {
       margin-bottom: 14px;
       padding-bottom: 10px;
@@ -181,19 +168,16 @@
       line-height: 1.25;
       letter-spacing: 0;
     }
-
     .intro {
       margin-bottom: 0;
       color: #334155;
       font-size: 16px;
     }
-
     .metrics {
       display: grid;
       grid-template-columns: repeat(3, minmax(0, 1fr));
       gap: 12px;
     }
-
     .metric {
       min-height: 96px;
       padding: 16px;
@@ -201,7 +185,6 @@
       border-radius: 8px;
       background: #fbfdff;
     }
-
     .metric .value {
       display: block;
       margin-bottom: 4px;
@@ -210,26 +193,22 @@
       font-weight: 700;
       line-height: 1;
     }
-
     .metric .label {
       display: block;
       color: var(--muted);
       font-size: 13px;
     }
-
     .metric .period {
       display: block;
       margin-top: 2px;
       color: #94a3b8;
       font-size: 12px;
     }
-
     .source-note {
       margin: 12px 0 0;
       color: var(--muted);
       font-size: 13px;
     }
-
     .interests {
       display: flex;
       flex-wrap: wrap;
@@ -238,7 +217,6 @@
       margin: 0;
       list-style: none;
     }
-
     .interests li {
       padding: 6px 10px;
       border-radius: 999px;
@@ -246,7 +224,6 @@
       color: #334155;
       font-size: 13px;
     }
-
     .paper-list {
       display: grid;
       gap: 18px;
@@ -254,34 +231,25 @@
       padding: 0;
       list-style: none;
     }
-
     .paper {
       padding-bottom: 18px;
       border-bottom: 1px solid var(--line);
     }
-
     .paper:last-child {
       padding-bottom: 0;
       border-bottom: 0;
     }
-
     .paper-title {
       margin: 0 0 4px;
       font-size: 17px;
       line-height: 1.35;
     }
-
-    .paper-title a {
-      color: #0f172a;
-    }
-
-    .authors,
-    .venue {
+    .paper-title a { color: #0f172a; }
+    .authors, .venue {
       margin: 0;
       color: var(--muted);
       font-size: 14px;
     }
-
     .paper-meta {
       display: flex;
       flex-wrap: wrap;
@@ -290,9 +258,7 @@
       font-size: 12px;
       font-weight: 700;
     }
-
-    .year,
-    .cites {
+    .year, .cites {
       display: inline-flex;
       align-items: center;
       min-width: 48px;
@@ -302,12 +268,10 @@
       color: #475569;
       background: var(--accent-soft);
     }
-
     .cites {
       background: #ecfdf5;
       color: #166534;
     }
-
     .coauthors {
       display: grid;
       grid-template-columns: repeat(2, minmax(0, 1fr));
@@ -316,7 +280,6 @@
       padding: 0;
       list-style: none;
     }
-
     .coauthors li {
       padding: 12px;
       border: 1px solid var(--line);
@@ -325,13 +288,11 @@
       color: #334155;
       font-size: 14px;
     }
-
     .coauthors strong {
       display: block;
       color: #0f172a;
       font-size: 14px;
     }
-
     footer {
       max-width: 1120px;
       margin: 0 auto;
@@ -345,29 +306,18 @@
         align-items: flex-start;
         flex-direction: column;
       }
-
-      nav {
-        justify-content: flex-start;
-      }
-
-      .layout {
-        grid-template-columns: 1fr;
-      }
-
-      .profile {
-        position: static;
-      }
-
+      nav { justify-content: flex-start; }
+      .layout { grid-template-columns: 1fr; }
+      .profile { position: static; }
       .avatar {
         width: 104px;
         height: 104px;
-        font-size: 34px;
       }
-
-      .metrics,
-      .coauthors {
-        grid-template-columns: 1fr;
+      .avatar svg {
+        width: 94px;
+        height: 94px;
       }
+      .metrics, .coauthors { grid-template-columns: 1fr; }
     }
   </style>
 </head>
@@ -387,7 +337,21 @@
   <main>
     <div class="layout">
       <aside class="profile" aria-label="Researcher profile">
-        <div class="avatar" aria-hidden="true">PH</div>
+        <div class="avatar" aria-hidden="true">
+          <svg viewBox="0 0 120 120" role="img" aria-label="Cartoon trail runner illustration">
+            <path class="trail-line" d="M16 93c16-6 25-6 40 0s28 6 48-3" />
+            <path class="trail-line" d="M20 103h62" />
+            <path class="runner-line" d="M56 41l15 12 14-5" />
+            <path class="runner-line" d="M55 43l-12 20 22 5" />
+            <path class="runner-line" d="M63 68l18 18" />
+            <path class="runner-line" d="M47 64l-14 22" />
+            <path class="runner-line" d="M48 55l-20 1" />
+            <path class="runner-line" d="M50 56l-8-12" />
+            <circle class="runner-fill" cx="63" cy="27" r="8" />
+            <path class="runner-line" d="M18 78l14-11 13 5 15-11" />
+            <path class="runner-line" d="M80 79l9 10 15-2" />
+          </svg>
+        </div>
         <h1>Po-Chun Hsu</h1>
         <p class="role">MediaTek Research</p>
         <p class="profile-note">Verified email at ntu.edu.tw. Research interests include machine learning and language models.</p>
@@ -430,78 +394,18 @@
         <section class="section" id="publications">
           <h2>Selected Publications</h2>
           <ol class="paper-list">
-            <li class="paper">
-              <h3 class="paper-title"><a href="https://aclanthology.org/2025.naacl-industry.9/">Enhancing function-calling capabilities in LLMs: Strategies for prompt formats, data integration, and multilingual translation</a></h3>
-              <p class="authors">YC Chen, PC Hsu, CJ Hsu, D Shiu</p>
-              <p class="venue">Proceedings of the 2025 Conference of the Nations of the Americas Chapter of the Association for Computational Linguistics</p>
-              <div class="paper-meta"><span class="year">2025</span><span class="cites">28 citations</span></div>
-            </li>
-            <li class="paper">
-              <h3 class="paper-title"><a href="https://aclanthology.org/2025.naacl-industry.66.pdf">RAD-Bench: Evaluating large language models' capabilities in retrieval augmented dialogues</a></h3>
-              <p class="authors">TL Kuo, FT Liao, MW Hsieh, FC Chang, PC Hsu, DS Shiu</p>
-              <p class="venue">Proceedings of the 2025 Conference of the Nations of the Americas Chapter of the Association for Computational Linguistics</p>
-              <div class="paper-meta"><span class="year">2025</span><span class="cites">17 citations</span></div>
-            </li>
-            <li class="paper">
-              <h3 class="paper-title"><a href="https://arxiv.org/abs/2303.04715">Extending the pre-training of BLOOM for improved support of Traditional Chinese: Models, methods and results</a></h3>
-              <p class="authors">P Ennen, PC Hsu, CJ Hsu, CL Liu, YC Wu, YH Liao, CT Lin, DS Shiu, et al.</p>
-              <p class="venue">arXiv preprint arXiv:2303.04715</p>
-              <div class="paper-meta"><span class="year">2023</span><span class="cites">15 citations</span></div>
-            </li>
-            <li class="paper">
-              <h3 class="paper-title"><a href="https://arxiv.org/abs/2403.02712">Breeze-7B Technical Report</a></h3>
-              <p class="authors">CJ Hsu, CL Liu, FT Liao, PC Hsu, YC Chen, DS Shiu</p>
-              <p class="venue">arXiv preprint arXiv:2403.02712</p>
-              <div class="paper-meta"><span class="year">2024</span><span class="cites">14 citations</span></div>
-            </li>
-            <li class="paper">
-              <h3 class="paper-title"><a href="https://arxiv.org/abs/2309.08448">Advancing the evaluation of Traditional Chinese language models: Towards a comprehensive benchmark suite</a></h3>
-              <p class="authors">CJ Hsu, CL Liu, FT Liao, PC Hsu, YC Chen, D Shiu</p>
-              <p class="venue">arXiv preprint arXiv:2309.08448</p>
-              <div class="paper-meta"><span class="year">2023</span><span class="cites">10 citations</span></div>
-            </li>
-            <li class="paper">
-              <h3 class="paper-title"><a href="https://arxiv.org/abs/2405.14259">Let's fuse step by step: A generative fusion decoding algorithm with LLMs for multi-modal text recognition</a></h3>
-              <p class="authors">CJ Hsu, YC Chen, FT Liao, PC Ho, YH Wang, PC Hsu, D Shiu</p>
-              <p class="venue">arXiv preprint arXiv:2405.14259</p>
-              <div class="paper-meta"><span class="year">2024</span><span class="cites">6 citations</span></div>
-            </li>
-            <li class="paper">
-              <h3 class="paper-title"><a href="https://aclanthology.org/2025.findings-acl.1281/">Let's fuse step by step: A generative fusion decoding algorithm with LLMs for robust and instruction-aware ASR and OCR</a></h3>
-              <p class="authors">CJ Hsu, YC Chen, FT Liao, PC Ho, YH Wang, PC Hsu, D Shiu</p>
-              <p class="venue">Findings of the Association for Computational Linguistics: ACL 2025, 24959-24973</p>
-              <div class="paper-meta"><span class="year">2025</span><span class="cites">4 citations</span></div>
-            </li>
-            <li class="paper">
-              <h3 class="paper-title"><a href="https://dl.acm.org/doi/abs/10.1145/2330163.2330201">A test problem with adjustable degrees of overlap and conflict among subproblems</a></h3>
-              <p class="authors">WM Chen, CY Shao, PC Hsu, TL Yu</p>
-              <p class="venue">Proceedings of the 14th annual conference on Genetic and evolutionary computation</p>
-              <div class="paper-meta"><span class="year">2012</span><span class="cites">4 citations</span></div>
-            </li>
-            <li class="paper">
-              <h3 class="paper-title"><a href="https://ui.adsabs.harvard.edu/abs/2025arXiv250113921R/abstract">The Breeze 2 herd of models: Traditional Chinese LLMs based on Llama with vision-aware and function-calling capabilities</a></h3>
-              <p class="authors">CJ Hsu, CS Liu, MH Chen, M Chen, PC Hsu, YC Chen, DS Shiu</p>
-              <p class="venue">arXiv e-prints, arXiv:2501.13921</p>
-              <div class="paper-meta"><span class="year">2025</span><span class="cites">3 citations</span></div>
-            </li>
-            <li class="paper">
-              <h3 class="paper-title"><a href="https://dl.acm.org/doi/abs/10.1145/2463372.2463421">A niching scheme for EDAs to reduce spurious dependencies</a></h3>
-              <p class="authors">PC Hsu, TL Yu</p>
-              <p class="venue">Proceedings of the 15th annual conference on Genetic and evolutionary computation</p>
-              <div class="paper-meta"><span class="year">2013</span><span class="cites">1 citation</span></div>
-            </li>
-            <li class="paper">
-              <h3 class="paper-title"><a href="https://arxiv.org/abs/2603.07286">Taiwan Safety Benchmark and Breeze Guard: Toward Trustworthy AI for Taiwanese Mandarin</a></h3>
-              <p class="authors">PC Hsu, MH Chen, TL Chao, CT Han, D Shiu</p>
-              <p class="venue">arXiv preprint arXiv:2603.07286</p>
-              <div class="paper-meta"><span class="year">2026</span></div>
-            </li>
-            <li class="paper">
-              <h3 class="paper-title"><a href="https://arxiv.org/abs/2603.19259">Breeze Taigi: Benchmarks and Models for Taiwanese Hokkien Speech Recognition and Synthesis</a></h3>
-              <p class="authors">YS Lan, CS Liu, YC Chen, PC Hsu, A Chiu, SW Lin, D Shiu, YF Liao</p>
-              <p class="venue">arXiv preprint arXiv:2603.19259</p>
-              <div class="paper-meta"><span class="year">2026</span></div>
-            </li>
+            <li class="paper"><h3 class="paper-title"><a href="https://aclanthology.org/2025.naacl-industry.9/">Enhancing function-calling capabilities in LLMs: Strategies for prompt formats, data integration, and multilingual translation</a></h3><p class="authors">YC Chen, PC Hsu, CJ Hsu, D Shiu</p><p class="venue">Proceedings of the 2025 Conference of the Nations of the Americas Chapter of the Association for Computational Linguistics</p><div class="paper-meta"><span class="year">2025</span><span class="cites">28 citations</span></div></li>
+            <li class="paper"><h3 class="paper-title"><a href="https://aclanthology.org/2025.naacl-industry.66.pdf">RAD-Bench: Evaluating large language models' capabilities in retrieval augmented dialogues</a></h3><p class="authors">TL Kuo, FT Liao, MW Hsieh, FC Chang, PC Hsu, DS Shiu</p><p class="venue">Proceedings of the 2025 Conference of the Nations of the Americas Chapter of the Association for Computational Linguistics</p><div class="paper-meta"><span class="year">2025</span><span class="cites">17 citations</span></div></li>
+            <li class="paper"><h3 class="paper-title"><a href="https://arxiv.org/abs/2303.04715">Extending the pre-training of BLOOM for improved support of Traditional Chinese: Models, methods and results</a></h3><p class="authors">P Ennen, PC Hsu, CJ Hsu, CL Liu, YC Wu, YH Liao, CT Lin, DS Shiu, et al.</p><p class="venue">arXiv preprint arXiv:2303.04715</p><div class="paper-meta"><span class="year">2023</span><span class="cites">15 citations</span></div></li>
+            <li class="paper"><h3 class="paper-title"><a href="https://arxiv.org/abs/2403.02712">Breeze-7B Technical Report</a></h3><p class="authors">CJ Hsu, CL Liu, FT Liao, PC Hsu, YC Chen, DS Shiu</p><p class="venue">arXiv preprint arXiv:2403.02712</p><div class="paper-meta"><span class="year">2024</span><span class="cites">14 citations</span></div></li>
+            <li class="paper"><h3 class="paper-title"><a href="https://arxiv.org/abs/2309.08448">Advancing the evaluation of Traditional Chinese language models: Towards a comprehensive benchmark suite</a></h3><p class="authors">CJ Hsu, CL Liu, FT Liao, PC Hsu, YC Chen, D Shiu</p><p class="venue">arXiv preprint arXiv:2309.08448</p><div class="paper-meta"><span class="year">2023</span><span class="cites">10 citations</span></div></li>
+            <li class="paper"><h3 class="paper-title"><a href="https://arxiv.org/abs/2405.14259">Let's fuse step by step: A generative fusion decoding algorithm with LLMs for multi-modal text recognition</a></h3><p class="authors">CJ Hsu, YC Chen, FT Liao, PC Ho, YH Wang, PC Hsu, D Shiu</p><p class="venue">arXiv preprint arXiv:2405.14259</p><div class="paper-meta"><span class="year">2024</span><span class="cites">6 citations</span></div></li>
+            <li class="paper"><h3 class="paper-title"><a href="https://aclanthology.org/2025.findings-acl.1281/">Let's fuse step by step: A generative fusion decoding algorithm with LLMs for robust and instruction-aware ASR and OCR</a></h3><p class="authors">CJ Hsu, YC Chen, FT Liao, PC Ho, YH Wang, PC Hsu, D Shiu</p><p class="venue">Findings of the Association for Computational Linguistics: ACL 2025, 24959-24973</p><div class="paper-meta"><span class="year">2025</span><span class="cites">4 citations</span></div></li>
+            <li class="paper"><h3 class="paper-title"><a href="https://dl.acm.org/doi/abs/10.1145/2330163.2330201">A test problem with adjustable degrees of overlap and conflict among subproblems</a></h3><p class="authors">WM Chen, CY Shao, PC Hsu, TL Yu</p><p class="venue">Proceedings of the 14th annual conference on Genetic and evolutionary computation</p><div class="paper-meta"><span class="year">2012</span><span class="cites">4 citations</span></div></li>
+            <li class="paper"><h3 class="paper-title"><a href="https://ui.adsabs.harvard.edu/abs/2025arXiv250113921R/abstract">The Breeze 2 herd of models: Traditional Chinese LLMs based on Llama with vision-aware and function-calling capabilities</a></h3><p class="authors">CJ Hsu, CS Liu, MH Chen, M Chen, PC Hsu, YC Chen, DS Shiu</p><p class="venue">arXiv e-prints, arXiv:2501.13921</p><div class="paper-meta"><span class="year">2025</span><span class="cites">3 citations</span></div></li>
+            <li class="paper"><h3 class="paper-title"><a href="https://dl.acm.org/doi/abs/10.1145/2463372.2463421">A niching scheme for EDAs to reduce spurious dependencies</a></h3><p class="authors">PC Hsu, TL Yu</p><p class="venue">Proceedings of the 15th annual conference on Genetic and evolutionary computation</p><div class="paper-meta"><span class="year">2013</span><span class="cites">1 citation</span></div></li>
+            <li class="paper"><h3 class="paper-title"><a href="https://arxiv.org/abs/2603.07286">Taiwan Safety Benchmark and Breeze Guard: Toward Trustworthy AI for Taiwanese Mandarin</a></h3><p class="authors">PC Hsu, MH Chen, TL Chao, CT Han, D Shiu</p><p class="venue">arXiv preprint arXiv:2603.07286</p><div class="paper-meta"><span class="year">2026</span></div></li>
+            <li class="paper"><h3 class="paper-title"><a href="https://arxiv.org/abs/2603.19259">Breeze Taigi: Benchmarks and Models for Taiwanese Hokkien Speech Recognition and Synthesis</a></h3><p class="authors">YS Lan, CS Liu, YC Chen, PC Hsu, A Chiu, SW Lin, D Shiu, YF Liao</p><p class="venue">arXiv preprint arXiv:2603.19259</p><div class="paper-meta"><span class="year">2026</span></div></li>
           </ol>
         </section>
 
